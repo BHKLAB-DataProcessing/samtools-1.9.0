@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     && wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2 \
     && tar xvjf samtools-1.9.tar.bz2 \
     && cd samtools-1.9 \
-    && ./configure \
+    && ./configure --enable-libcurl \
     && make \
     && rm -r /samtools-1.9/test \
     && cp -r /samtools-1.9/* /usr/bin \
